@@ -41,7 +41,7 @@ playwright-example/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/playwright-example.git
+git clone https://github.com/RPStout/playwright-example.git
 cd playwright-example
 ```
 
