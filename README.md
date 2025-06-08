@@ -51,30 +51,73 @@ cd playwright-example
 npm install
 ```
 
-## 🧪 Running Tests
+## 🧪 Running Tests with Smoke Validation
 
-Run the full test suite:
+This project includes scripts to run smoke tests first, and if they pass, continue with the full test suite.
+
+### 🔧 Prerequisites
+
+#### On macOS/Linux (Bash)
+
+Make sure the shell script is executable (only needs to be done once):
 
 ```bash
+chmod +x scripts/run-tests.sh
+```
+
+#### On Windows (Command Prompt)
+
+No special permissions needed for `.cmd` files.
+
+---
+
+### 🚀 Run Tests
+
+#### On macOS/Linux (Bash)
+
+Run the shell script:
+
+```bash
+./scripts/run-tests.sh
+```
+
+#### On Windows (Command Prompt)
+
+Run the batch file:
+
+```cmd
+scripts\run-tests.cmd
+```
+
+### 📝 How it Works
+
+- ✅ Runs all tests tagged with `@smoke` first.
+- ❌ If any smoke test fails, the script stops and prevents the full suite from running.
+- ✅ If smoke tests pass, the full suite runs next (including smoke tests again by default).
+- 🔁 You can change the script to **exclude** smoke tests from the full run if preferred.
+
+---
+
+### 📦 Optional: Run Tests Manually
+
+```bash
+# Run only smoke tests
+npx playwright test --grep @smoke
+
+# Run all tests including smoke
 npx playwright test
-```
 
-Run tests in headed mode:
-
-```bash
+# Run tests in headed mode:
 npx playwright test --headed
-```
 
-Run a specific test file:
+# Run all tests excluding smoke
+npx playwright test --grepInvert @smoke
 
-```bash
-npx playwright test tests/login.spec.ts
-```
-
-Run with UI to watch tests:
-
-```bash
+# Run with UI to watch tests:
 npx playwright test --ui
+
+# Run a specific test file:
+npx playwright test tests/login.spec.ts
 ```
 
 ## 📸 Reporting

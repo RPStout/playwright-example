@@ -1,0 +1,22 @@
+{
+  "name": "playwright-example",
+  "version": "1.0.0",
+  "description": "This repository demonstrates a complete Playwright test automation framework built from the ground up using TypeScript. It showcases best practices for structuring end-to-end tests, using the Page Object Model, and building scalable, maintainable test suites for web applications.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RPStout/playwright-example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RPStout/playwright-example/issues"
+  },
+  "homepage": "https://github.com/RPStout/playwright-example#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.30"
+  }
+}
